@@ -1,0 +1,11 @@
+
+.calendar {
+  width: 85%;
+  float: left;
+}
+
+.todolist {
+  width: 15%;
+  float: right;
+  background-color: antiquewhite;
+}

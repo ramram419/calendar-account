@@ -1,8 +1,11 @@
-import React from "react";
+import React from 'react';
 import Calendar from '@toast-ui/react-calendar';
+import './css/MyCalendar.css';
 import 'tui-calendar/dist/tui-calendar.css';
 import 'tui-date-picker/dist/tui-date-picker.css';
 import 'tui-time-picker/dist/tui-time-picker.css';
+import prevarrow from './img/back.png';
+import nextarrow from './img/next.png';
 
 
 class MyCalendar extends React.Component {
@@ -37,11 +40,14 @@ class MyCalendar extends React.Component {
   render(){
     return(
       <>
-      <button onClick={this.handleClickPrevButton}>PREV</button>
-      {this.state.date}
-      <button onClick={this.handleClickNextButton}>NEXT</button>
-      <button onClick={this.weekChangeButton}>WEEK</button>
-      <button onClick={this.monthChangeButton}>MONTH</button>
+      <div className="header">
+        <button onClick={this.handleClickPrevButton} className="prev"><img src={prevarrow} alt="prevarrow"></img></button>
+        <p>{this.state.date}</p>
+        <button onClick={this.handleClickNextButton} className="next"><img src={nextarrow} alt="nextarrow"></img></button>
+        <button onClick={this.weekChangeButton} className="week">WEEK</button>
+        <button onClick={this.monthChangeButton} className="month">MONTH</button>
+      </div>
+     
       <Calendar                    
         height="750px"                  
         ref={this.calendarRef}                    

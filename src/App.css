@@ -1,11 +1,11 @@
 
 .calendar {
-  width: 85%;
+  width: 80%;
   float: left;
 }
 
 .todolist {
-  width: 15%;
+  width: 20%;
   float: right;
   background-color: antiquewhite;
 }

@@ -1,0 +1,33 @@
+button {
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    font-size: 15px;
+    margin: 10px;
+    outline: 0;
+    cursor: pointer;
+}
+
+p {
+    margin: 0 20px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.header {
+    margin: 20px;
+    text-align: center;
+}
+
+.prev {
+    margin-left: 170px;;
+}
+
+img {
+    width: 20px;
+}
+
+.month, .week {
+    float: right;
+}

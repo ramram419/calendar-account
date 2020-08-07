@@ -1,5 +1,6 @@
 import React from "react";
 import Calendar from './component/MyCalendar';
+import Todolist from './component/Todolist'
 import "./App.css"
 
 class App extends React.Component {
@@ -10,7 +11,7 @@ class App extends React.Component {
         <Calendar />
       </div>
       <div className="todolist">
-        list
+        <Todolist />
       </div>
       </>
     )

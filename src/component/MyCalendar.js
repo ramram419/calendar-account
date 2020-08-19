@@ -16,13 +16,13 @@ class MyCalendar extends React.Component {
   calendarRef = React.createRef();
 
   handleClickNextButton = () => {
-    this.setState({date: this.state.date +1});
+    this.setState({date: this.state.date + 1});
     const calendarInstance = this.calendarRef.current.getInstance();
     calendarInstance.next();
   }
 
   handleClickPrevButton = () => {
-    this.setState({date: this.state.date -1});
+    this.setState({date: this.state.date - 1});
     const calendarInstance = this.calendarRef.current.getInstance();
     calendarInstance.prev();
   }

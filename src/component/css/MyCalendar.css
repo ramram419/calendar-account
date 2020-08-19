@@ -28,6 +28,11 @@ img {
     width: 20px;
 }
 
-.month, .week {
+.show {
     float: right;
+}
+
+.show:hover, .on {
+    color: #FFAB40;
+    font-weight: bold;
 }

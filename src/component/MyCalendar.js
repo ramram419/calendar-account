@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import Calendar from '@toast-ui/react-calendar';
 import './css/MyCalendar.css';
 import 'tui-calendar/dist/tui-calendar.css';
@@ -7,6 +8,12 @@ import 'tui-time-picker/dist/tui-time-picker.css';
 import prevarrow from './img/back.png';
 import nextarrow from './img/next.png';
 
+$(document).ready(function() {
+  $(".show").click(function() {
+    $(".show").removeClass("on");
+    $(this).addClass("on");
+  })
+})
 
 class MyCalendar extends React.Component {
   constructor() {
@@ -44,8 +51,8 @@ class MyCalendar extends React.Component {
         <button onClick={this.handleClickPrevButton} className="prev"><img src={prevarrow} alt="prevarrow"></img></button>
         <p>{this.state.date}</p>
         <button onClick={this.handleClickNextButton} className="next"><img src={nextarrow} alt="nextarrow"></img></button>
-        <button onClick={this.weekChangeButton} className="week">WEEK</button>
-        <button onClick={this.monthChangeButton} className="month">MONTH</button>
+        <button onClick={this.weekChangeButton} className="show">WEEK</button>
+        <button onClick={this.monthChangeButton} className="show on">MONTH</button>
       </div>
      
       <Calendar                    

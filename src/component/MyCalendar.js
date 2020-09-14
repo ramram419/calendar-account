@@ -7,6 +7,7 @@ import 'tui-date-picker/dist/tui-date-picker.css';
 import 'tui-time-picker/dist/tui-time-picker.css';
 import prevarrow from './img/back.png';
 import nextarrow from './img/next.png';
+import moment from 'moment';
 
 $(document).ready(function() {
   $(".show").click(function() {
@@ -16,22 +17,39 @@ $(document).ready(function() {
 })
 
 class MyCalendar extends React.Component {
-  constructor() {
-    super();
-    var today = new Date(),
-        date = today.getFullYear() + '.' + today.getMonth();
-    this.state = { date: date};
+  constructor(props) {
+    super(props);
+    this.state = {
+      today: moment(),
+      date:moment()
+    }
   }
   calendarRef = React.createRef();
 
+  componentDidMount = () => {
+    var newdate = moment(this.state.today);
+    this.setState({
+      today: newdate,
+      date: newdate
+    })
+  }
+
   handleClickNextButton = () => {
-    this.setState({date: this.state.date + 1});
+    var newnow = moment(this.state.date).add(1,'M');
+    var newdate = moment(newnow);
+    this.setState({
+      date: newdate
+    });
     const calendarInstance = this.calendarRef.current.getInstance();
     calendarInstance.next();
   }
 
   handleClickPrevButton = () => {
-    this.setState({date: this.state.date - 1});
+    var newnow = moment(this.state.date).subtract(1,'M');
+    var newdate = moment(newnow);
+    this.setState({
+      date: newdate
+    });
     const calendarInstance = this.calendarRef.current.getInstance();
     calendarInstance.prev();
   }
@@ -51,7 +69,7 @@ class MyCalendar extends React.Component {
       <>
       <div className="header">
         <button onClick={this.handleClickPrevButton} className="prev"><img src={prevarrow} alt="prevarrow"></img></button>
-        <p>{this.state.date}</p>
+        {<p>{this.state.date.format('YYYY.MM')}</p>}
         <button onClick={this.handleClickNextButton} className="next"><img src={nextarrow} alt="nextarrow"></img></button>
         <button onClick={this.weekChangeButton} className="show">WEEK</button>
         <button onClick={this.monthChangeButton} className="show on">MONTH</button>

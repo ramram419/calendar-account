@@ -18,7 +18,9 @@ $(document).ready(function() {
 class MyCalendar extends React.Component {
   constructor() {
     super();
-    this.state = { date: new Date().getMonth() + 1 };
+    var today = new Date(),
+        date = today.getFullYear() + '.' + today.getMonth();
+    this.state = { date: date};
   }
   calendarRef = React.createRef();
 

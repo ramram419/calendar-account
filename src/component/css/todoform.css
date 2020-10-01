@@ -1,0 +1,29 @@
+.form input {
+  display: inline-block;
+  float: left;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  width: 75%;
+  height: 30px;
+  border-bottom: 1px solid #FFCC80;
+}
+
+.button {
+  padding: 3px 1px 1px;
+  text-align: center;
+  display: inline-block;
+  width: 21%;
+  height: 27px;
+  background: #FFC107;
+  border-radius: 3px;
+  color: #000000;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background: #FFA000;
+  color: #ffffff;
+}
